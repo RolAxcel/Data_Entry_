@@ -1,472 +1,474 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    background-color: #0a0a0a;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
-    gap: 16px;
-    margin: 10px 8px;
-    overflow: hidden;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+body {
+  background-color: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  gap: 16px;
+  margin: 10px 8px;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-  .container {
-    border: 2px solid #999999;
-    width: 100%;
-    padding-top: 6px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    max-height: 330px;
-    overflow: auto;
-    color: #999999;
-  }
+.container {
+  border: 2px solid #999999;
+  width: 100%;
+  padding-top: 6px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  max-height: 330px;
+  overflow: auto;
+  color: #999999;
+}
 
-  .selection {
-    background: #292929;
-    padding: 15px 10px;
-    border-radius: 6px;
-    display: flex;
-    gap: 20px;
-    width: 40%;
-    justify-content: space-evenly;
-    margin-left: 20px;
-    margin-right: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  }
+.selection {
+  background: #292929;
+  padding: 15px 10px;
+  border-radius: 6px;
+  display: flex;
+  gap: 20px;
+  width: 40%;
+  justify-content: space-evenly;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
 
-  .selection-btn {
-    border: 0;
-    border-radius: 4px;
-    padding: 10px;
-    display: flex;
-    gap: 13px;
-    background: #1f1f1f;
-    cursor: pointer;
-    color: #999999;
-    flex-wrap: wrap;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
+.selection-btn {
+  border: 0;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  gap: 13px;
+  background: #1f1f1f;
+  cursor: pointer;
+  color: #999999;
+  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
 
-  .selection-btn:hover .selection{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  }
+.selection-btn:hover .selection{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
 
-  .selection-btn:active {
-    scale: 0.93;
-  }
-  
-  .add-btn, .add-btn-2 , .add-btn-3{
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    padding: 4px 7px;
-    border: 0;
-    color: white;
-  }
+.selection-btn:active {
+  scale: 0.93;
+}
 
-  .add-btn-3 {
-    float: right;
-  }
+.add-btn, .add-btn-2 , .add-btn-3{
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  padding: 4px 7px;
+  border: 0;
+  color: white;
+}
 
-  .add-btn {
-    width: 20%;
-    color: black;
-  }
-  
-  .add-btn-2 {
-    float: right;
-    position: relative;
-    top: 325px;
-  }
+.add-btn-3 {
+  float: right;
+}
 
-  .header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #525252;
-    border-bottom: 1px solid #ccc;
-  }
+.add-btn {
+  width: 20%;
+  color: black;
+}
 
-  .child {
-    text-align: center;
-    width: 100%;
-    border-right: 1px solid #ccc;
-    user-select: none;
-  }
+.add-btn-2 {
+  float: right;
+  position: relative;
+  top: 325px;
+}
 
-  .child:nth-of-type(4) {
-    border-right: none;
-  }
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #525252;
+  border-bottom: 1px solid #ccc;
+}
 
-  .record-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
+.child {
+  text-align: center;
+  width: 100%;
+  border-right: 1px solid #ccc;
+  user-select: none;
+}
 
-  .record-row p {
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
-  }
+.child:nth-of-type(4) {
+  border-right: none;
+}
 
-  .delete-btn, .retrieve-btn{
-    position: fixed;
-    bottom: 20px;
-    background-color: red;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-  }
+.record-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
 
-  .delete-btn .tooltip {
-    position: absolute;
-    background-color: rgb(75, 75, 75);
-    width: 90px;
-    padding: 10px 5px;
-    top: -45px;
-    left: -20px;
-    pointer-events: none;
-    opacity: 0;
-    transition: all 0.17s;
-  }
+.record-row p {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
 
-  .delete-btn .tooltip::before {
-    content: "yeah";
-    background-color: rgb(75, 75, 75);
-    position: absolute;
-    clip-path: polygon(4% 28%, 48% 100%, 100% 28%);
-    top: 28px;
-    right: 27px;
-    color: rgb(75, 75, 75);
-  }
+.delete-btn, .retrieve-btn{
+  position: fixed;
+  bottom: 20px;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
 
-  .delete-btn:hover .tooltip {
-    pointer-events: auto;
-    opacity: 1;
-  }
+.delete-btn .tooltip {
+  position: absolute;
+  background-color: rgb(75, 75, 75);
+  width: 90px;
+  padding: 10px 5px;
+  top: -45px;
+  left: -20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.17s;
+}
 
-  .delete-btn:hover, .retrieve-btn{
-    background-color: rgba(160, 0, 0, 0.829);
-    transition: all 0.25s;
-  }
-  
-  .retrieve-btn:hover {
-    background-color: rgb(0, 167, 0);
-  }
+.delete-btn .tooltip::before {
+  content: "yeah";
+  background-color: rgb(75, 75, 75);
+  position: absolute;
+  clip-path: polygon(4% 28%, 48% 100%, 100% 28%);
+  top: 28px;
+  right: 27px;
+  color: rgb(75, 75, 75);
+}
 
-  .retrieve-btn {
-    background-color: green;
-    bottom: 60px; 
-  }
+.delete-btn:hover .tooltip {
+  pointer-events: auto;
+  opacity: 1;
+}
 
-  .reset-btn {
-    position: fixed;
-    background-color: rgb(0, 47, 255);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    left: 155px;
-  }
+.delete-btn:hover, .retrieve-btn{
+  background-color: rgba(160, 0, 0, 0.829);
+  transition: all 0.25s;
+}
 
-  .reset-btn .tooltip {
-    position: absolute;
-    background-color: rgb(75, 75, 75);
-    width: 100px;
-    padding: 10px 1px;
-    border-radius: 4px;
-    left: -22px;
-    bottom: 50px;
-    pointer-events: none;
-    transition: all 0.15s;
-    font-weight: 400;
-    letter-spacing: 1px;
-    opacity: 0;
-    pointer-events: none;
-  }
+.retrieve-btn:hover {
+  background-color: rgb(0, 167, 0);
+}
 
-  .reset-btn .tooltip::before {
-    content: "yeah";
-    color: rgb(75, 75, 75);
-    clip-path: polygon(4% 28%, 48% 100%, 100% 28%);
-    background-color: rgb(75, 75, 75);
-    position: absolute;
-    top: 26px;
-    left: 28px;
-  }
+.retrieve-btn {
+  background-color: green;
+  bottom: 60px; 
+}
 
-  .reset-btn:hover .tooltip {
-    opacity: 1;
-    pointer-events: auto;
-  }
+.reset-btn {
+  position: fixed;
+  background-color: rgb(0, 47, 255);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  left: 155px;
+}
 
-  .retrieve-btn .tooltip {
-    position: absolute;
-    background-color: rgb(75, 75, 75);
-    width: 170px;
-    padding: 10px 1px;
-    border-radius: 4px;
-    left: -17px;
-    bottom: 50px;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.15s;
-    font-weight: 400;
-  }
+.reset-btn .tooltip {
+  position: absolute;
+  background-color: rgb(75, 75, 75);
+  width: 100px;
+  padding: 10px 1px;
+  border-radius: 4px;
+  left: -22px;
+  bottom: 50px;
+  pointer-events: none;
+  transition: all 0.15s;
+  font-weight: 400;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 
-  .retrieve-btn .tooltip::before {
-    content: "yeah";
-    color: rgb(75, 75, 75);
-    clip-path: polygon(4% 28%, 48% 100%, 100% 28%);
-    background-color: rgb(75, 75, 75);
-    position: absolute;
-    top: 28px;
-    left: 28px;
-  }
+.reset-btn .tooltip::before {
+  content: "yeah";
+  color: rgb(75, 75, 75);
+  clip-path: polygon(4% 28%, 48% 100%, 100% 28%);
+  background-color: rgb(75, 75, 75);
+  position: absolute;
+  top: 26px;
+  left: 28px;
+}
 
-  .retrieve-btn:hover .tooltip {
-    opacity: 1;
-    pointer-events: auto;
-  }
+.reset-btn:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-  .reset-btn:hover {
-    background-color: rgb(33, 92, 255);
-    transition: 0.15s;
-  }
+.retrieve-btn .tooltip {
+  position: absolute;
+  background-color: rgb(75, 75, 75);
+  width: 170px;
+  padding: 10px 1px;
+  border-radius: 4px;
+  left: -17px;
+  bottom: 50px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.15s;
+  font-weight: 400;
+}
 
-  .highlight-delete {
-    background-color: #ffcccc;
-  }
-  
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
-  }
+.retrieve-btn .tooltip::before {
+  content: "yeah";
+  color: rgb(75, 75, 75);
+  clip-path: polygon(4% 28%, 48% 100%, 100% 28%);
+  background-color: rgb(75, 75, 75);
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
 
-  .modal-content {
-    background-color: #8f8f8f;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-  }
+.retrieve-btn:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-  .modal-content h2 {
-    text-align: center;
-    margin-bottom: 8px;
-  }
+.reset-btn:hover {
+  background-color: rgb(33, 92, 255);
+  transition: 0.15s;
+}
 
-  .close {
-    color: black;
-    bottom: 0;
-  }
+.highlight-delete {
+  background-color: #ffcccc;
+}
 
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    line-height: 11px;
-  }
-  
-  input {
-    outline: 0;
-    padding: 5px;
-    border: 0.7px solid;
-    border-radius: 4px;
-    background-color:  #333333;
-    color: #999999;
-  }
+.modal-content {
+  background-color: #8f8f8f;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
 
-  .restore-modal {
-    display: none;
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
-  }
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
 
-  .restore-content {
-    background-color: #8f8f8f;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 4px;
-  }
+.close {
+  color: black;
+  bottom: 0;
+}
 
-  .restore-select {
-    width: 100%;
-    margin-bottom: 10px;
-  }
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-  #searchResults {
-    margin-top: 10px;
-  }
-  
-  .search-result {
-    background-color: #f1f1f1;
-    padding: 5px;
-    margin: 5px 0;
-    border-radius: 4px;
-  }
-  
-  .fa-solid {
-    display: none;
-  }
-  
-  .highlighted {
-    background-color: rgb(255, 164, 164); 
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  line-height: 11px;
+}
 
+input {
+  outline: 0;
+  padding: 5px;
+  border: 0.7px solid;
+  border-radius: 4px;
+  background-color:  #333333;
+  color: #999999;
+}
+
+.restore-modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.restore-content {
+  background-color: #8f8f8f;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 4px;
+}
+
+.restore-select {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#searchResults {
+  margin-top: 10px;
+}
+
+.search-result {
+  background-color: #f1f1f1;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.fa-solid {
+  display: none;
+}
+
+.highlighted {
+  background-color: #858585; 
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
+.yeah {
+  display: block;
+}
+
+.fa-solid {
+  display: none;
+}
+
+@media screen and (max-width: 769px) {
   .yeah {
+    display: none;
+  }
+
+  .fa-solid {
     display: block;
   }
 
-  .fa-solid {
+  .delete-btn {
+    margin-right: 50px;
+  }
+
+  .retrieve-btn {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width: 770px) and (max-width: 1279px) {
+   body {
+    margin-left: 70px;
+    margin-right: 70px;
+    justify-content: flex-start;
+    margin-top: 150px;
+   }
+
+   .delete-btn {
+    right: 60px;
+    margin-right: 50px;
+   }
+
+   .retrieve-btn {
+    bottom: 20px;
+    left: 60px;
+    margin-left: 50px;
+   }
+
+   .modal {
+    padding-top: 0;
+   }
+}
+
+@media screen and (min-width: 1230px) {
+  body {
+    justify-content: flex-start;
+    margin: 0 180px;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .selection {
+    width: 20%;
+  }
+
+  .delete-btn {
+    right: 30px;
+    bottom: 20px;
+   }
+
+   .retrieve-btn {
+    bottom: 20px;
+    left: 40px;
+   }
+
+   .reset-btn {
+    left: 50px;
+   }
+
+   .fa-solid {
     display: none;
+   }
+}
+
+@media screen and (min-width: 310px) and (max-width: 770px) {
+  .selection {
+    width: 70%;
+    margin: none;
   }
 
-  @media screen and (max-width: 769px) {
-    .yeah {
-      display: none;
-    }
-
-    .fa-solid {
-      display: block;
-    }
-
-    .delete-btn {
-      margin-right: 50px;
-    }
-
-    .retrieve-btn {
-      margin-left: 50px;
-    }
+  .selection-btn{
+    font-size: 10px;
   }
 
-  @media screen and (min-width: 770px) and (max-width: 1279px) {
-     body {
-      margin-left: 70px;
-      margin-right: 70px;
-      justify-content: flex-start;
-      margin-top: 150px;
-     }
-
-     .delete-btn {
-      right: 60px;
-      margin-right: 50px;
-     }
-
-     .retrieve-btn {
-      bottom: 20px;
-      left: 60px;
-      margin-left: 50px;
-     }
-
-     .modal {
-      padding-top: 0;
-     }
+  body {
+    justify-content: flex-start;
+    margin-top: 150px;
   }
 
-  @media screen and (min-width: 1230px) {
-    body {
-      justify-content: flex-start;
-      margin: 0 180px;
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .selection {
-      width: 20%;
-    }
-
-    .delete-btn {
-      right: 30px;
-      bottom: 20px;
-     }
-
-     .retrieve-btn {
-      bottom: 20px;
-      left: 40px;
-     }
-
-     .reset-btn {
-      left: 50px;
-     }
-
-     .fa-solid {
-      display: none;
-     }
+  .container {
+    max-height: 240px;
   }
 
-  @media screen and (min-width: 310px) and (max-width: 770px) {
-    .selection {
-      width: 70%;
-      margin: none;
-    }
-
-    .selection-btn{
-      font-size: 10px;
-    }
-
-    body {
-      justify-content: flex-start;
-      margin-top: 150px;
-    }
-
-    .container {
-      max-height: 240px;
-    }
-
-    .delete-btn {
-      right: 10px;
-      bottom: 50px;
-    }
-
-    .retrieve-btn {
-      left: 10px;
-      bottom: 50px;
-    }
-
-    .reset-btn {
-      bottom: 50px;
-    }
-
+  .delete-btn {
+    right: 10px;
+    bottom: 50px;
   }
+
+  .retrieve-btn {
+    left: 10px;
+    bottom: 50px;
+  }
+
+  .reset-btn {
+    bottom: 50px;
+  }
+
+}
