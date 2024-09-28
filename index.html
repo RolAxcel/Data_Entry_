@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login web</title>
+    <link rel="stylesheet" href="user/user.css">
+    <link rel="stylesheet" href="cl-icon/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="" class="form">
+          <h1>Admin Login</h1>
+          <input type="email" placeholder="Email" required name="">
+          <input type="password" placeholder="Passrword" required name="">
+          <button class="btn" type="submit" style="color: black;">Submit</button>  
+        </form>
+        <div>
+          <div id="loginModal" class="modal">
+            <div class="modal-content" style="text-align: center;">
+              <span id="closeModal" class="close"></span>
+              <p id="modalMessage" style="text-align: center; color: white; padding-right: 80px;">mrDev</p>
+              <button id="modalOk" class="modal-btn"></button>
+            </div>
+          </div>
+        </div>
+        <div class="banner">
+          <h1>Welcome User/Admin</h1>
+          <img src="images/yeahyeah-removebg-preview.png" alt="">
+            <p class="para"></p>
+        </div>
+    </div>
+
+    <script src="main/Auth.js"></script>
+</body>
+</html>            

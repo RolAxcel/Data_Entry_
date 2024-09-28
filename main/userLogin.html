@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      align-items: center;
+      gap: 16px;
+      margin: 10px 70px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .container {
+      border: 2px solid black;
+      width: 100%;
+      padding-top: 6px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .child {
+      text-align: center;
+      width: 100%;
+      border-right: 1px solid #ccc;
+    }
+
+    .child:nth-of-type(4) {
+      border-right: none;
+    }
+
+    .record-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .record-row p {
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .search-bar {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 40%;
+      font-size: 16px;
+      border-radius: 4px;
+      background-color: rgb(221, 221, 221);
+      border: 0;
+    }
+
+    @media screen and (max-width: 480px) {
+      body {
+        margin: 10px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>User Dashboard</h1>
+
+  <!-- Search Bar -->
+  <input type="text" id="searchInput" class="search-bar" placeholder="Search by ID Number, Name, Username, or Role...">
+
+  <!-- Header row with titles -->
+  <div class="container">
+    <div class="header-row">
+      <div class="child child-1">
+        <h5>ID Number</h5>
+      </div>
+      <div class="child child-2">
+        <h5>Full Name</h5>
+      </div>
+      <div class="child child-3">
+        <h5>Username</h5>
+      </div>
+      <div class="child child-4">
+        <h5>Role</h5>
+      </div>
+    </div>
+
+    <!-- Record rows will be populated here -->
+    <div id="recordsContainer"></div>
+  </div>
+
+  <script>
+    // Retrieve the records from localStorage (if stored by the admin)
+    const storedRecords = JSON.parse(localStorage.getItem('records')) || [];
+
+    // Function to render records in the dashboard
+    function renderRecords(records) {
+      const recordsContainer = document.getElementById('recordsContainer');
+      recordsContainer.innerHTML = ''; // Clear previous records
+
+      records.forEach(record => {
+        const recordRow = document.createElement('div');
+        recordRow.classList.add('record-row');
+
+        recordRow.innerHTML = `
+          <div class="child child-1"><p>${record.idNumber}</p></div>
+          <div class="child child-2"><p>${record.fullName}</p></div>
+          <div class="child child-3"><p>${record.username}</p></div>
+          <div class="child child-4"><p>${record.role}</p></div>
+        `;
+
+        recordsContainer.appendChild(recordRow);
+      });
+    }
+
+    // Initially render all records
+    renderRecords(storedRecords);
+
+    // Add search functionality
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const filteredRecords = storedRecords.filter(record =>
+        record.idNumber.toLowerCase().includes(searchTerm) ||
+        record.fullName.toLowerCase().includes(searchTerm) ||
+        record.username.toLowerCase().includes(searchTerm) ||
+        record.role.toLowerCase().includes(searchTerm)
+      );
+      renderRecords(filteredRecords); // Render filtered records
+    });
+  </script>
+</body>
+</html>

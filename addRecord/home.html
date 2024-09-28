@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addRecord</title>
+  <link rel="stylesheet" href="addRecord.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous"> 
+  <style>
+    @media screen and (min-width: 770px) {
+      .yeah {
+        display: block;
+      }
+
+      .fa-solid {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="headContainer"></div>
+  <h1>Dashboard</h1>
+  <div class="selection">
+    <button class="selection-btn" id="addRecordBtn">Add Record</button>
+    <button class="selection-btn" id="searchRecordBtn">Search Record</button>
+  </div>
+  <div class="nothingness" style="height: 11px; width: 100%; background: grey;"></div>
+
+  <!-- Header row with titles -->
+  <div class="container">
+    <div class="header-row">
+      <div class="child child-1">
+        <h5>ID Number</h5>
+      </div>
+      <div class="child child-2">
+        <h5>Full Name</h5>
+      </div>
+      <div class="child child-3">
+        <h5>Username</h5>
+      </div>
+      <div class="child child-4">
+        <h5>Role</h5>
+      </div>
+    </div>
+  </div>
+
+  <button id="fixedDeleteBtn" class="delete-btn">
+    <h6 class="yeah">Delete</h6>
+    <i class="icons fa-solid fa-trash"></i>
+    <div class="tooltip">
+      <h5>Delete records</h5>
+    </div>
+  </button>
+  <button id="fixedRetrieveBtn" class="retrieve-btn">
+    <h5 class="yeah">Retrieve</h5>
+    <i class="icons fa-solid fa-window-restore"></i>
+    <div class="tooltip">
+      <h5>Retrieve the Deleted records</h5>
+    </div>
+  </button>
+  <button id="fixedResetBtn" class="reset-btn" onclick="localStorage.removeItem('records')">
+    <h5 class="yeah">Reset</h5>
+    <i class="icons fa-solid fa-rotate-right"></i>
+      <div class="tooltip">
+        <h5>Reset Data</h5>
+      </div>
+    </button>
+
+  <!-- Add Record Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <button class="add-btn-2 close">Cancel</button>
+      <h2>Add Record</h2>
+      <form id="addRecordForm">
+        <label for="idNumber">ID Number:</label><br>
+        <input type="number" id="idNumber" name="idNumber" required><br><br>
+        <label for="fullName">Full Name:</label><br>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="role">Role:</label><br>
+        <input type="text" id="role" name="role" required><br><br>
+        <button class="add-btn" type="submit">Add</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Restore Record Modal -->
+  <div id="restoreModal" class="restore-modal">
+    <div class="restore-content">
+      <button class="add-btn-2 close">Cancel</button>
+      <h2>Restore Record</h2>
+      <select id="restoreSelect" class="restore-select">
+        <option value="">Select a record to restore</option>
+      </select>
+      <button id="restoreBtn" class="add-btn">Restore</button>
+    </div>
+  </div>
+
+  <!-- Search Record Modal -->
+  <div id="searchModal" class="modal">
+    <div class="modal-content">
+      <button class="add-btn-2 close">Cancel</button>
+      <h2>Search Record</h2>
+      <input type="text" id="searchInput" placeholder="Search recorded rows" style=" border-radius: 3px; padding: 5px;">
+      <div id="searchResults"></div>
+    </div>
+  </div>
+
+  <script src="addRecord.js"></script>
+</body>
+</html>
+
